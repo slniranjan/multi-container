@@ -19,7 +19,23 @@ after_success:
   - docker push slniranjan/multi-client
   - docker push slniranjan/multi-nginx
   - docker push slniranjan/multi-server
-  - docker push slniranjan/multi-worker 
+  - docker push slniranjan/multi-worker
+
+# configuring deployment to AWS elasticbeanstalk
+# didn't configure AWS side. just for reference here about deployment
+
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "us-west-2"
+#   app: "multi-docker"
+#   env: "MultiDocker-env"
+#   bucket_name: "elasticbeanstalk-us-west-2-13464646"
+#   bucket_path: "docker"
+#   on:
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY //get from env variable in travis ci
+#   secret_access_key:
+#     secure: AWS_SECRET_KEY //get from env variable in travis ci
 
 
 
